@@ -4,11 +4,9 @@ Configure Swagger UI with Docker
 ## Steps
 1 - [Install Docker](https://docs.docker.com/)
 
-2 - Edit and save one or more .yaml file in [Swagger Editor](https://editor.swagger.io/)
+2 - Edit .yaml files in ```./swagger/doc``` as you need or create new in [Swagger Editor](https://editor.swagger.io/)
 
-3 - Copy file(s) to ``` ./swagger/doc``` folder
-
-4 - Create ```docker-compose.yaml``` file with the content below
+3 - Edit ```./swagger/docker-compose.yaml``` as you need
 
 ```sh
 version: '3.6'
@@ -20,22 +18,22 @@ services:
     ports:
       - "8084:8080"
     volumes:
-      - ./swagger/doc:/usr/share/nginx/html/doc
+      - ./doc:/usr/share/nginx/html/doc
     environment:
-      URLS_PRIMARY_NAME: "OpenApiOne"
+      URLS_PRIMARY_NAME: "PetstoreApi-1.1.0"
       URLS: "[
-          { url: 'doc/openapi1.yaml', name: 'OpenApiOne'},
-          { url: 'doc/openapi2.yaml', name: 'OpenApiTwo'},
+          { url: 'doc/petstore1.yaml', name: 'PetstoreApi-1.0.11'},
+          { url: 'doc/petstore2.yaml', name: 'PetstoreApi-1.1.0'},
       ]"
 ```
 
-5 - Up ```docker-compose.yaml``` file
+4 - Up ```docker-compose.yaml``` file
 
 ```sh
 # docker-compose up -d
 ```
 
-6 - Open [http://localhost:8084](http://localhost:8084) in your browser.
+5 - Open [http://localhost:8084](http://localhost:8084) in your browser.
 
 ## License
 
