@@ -38,7 +38,7 @@ services:
 # docker-compose up -d
 ```
 
-5 - Swagger Editor link: [http://localhost:8084](http://localhost:8081);
+5 - Swagger Editor link: [http://localhost:8081](http://localhost:8081);
 
 6 - Swagger UI link: [http://localhost:8084](http://localhost:8084).
 
