@@ -8,7 +8,7 @@ Configure Swagger UI with Docker
 
 3 - Copy file(s) to ``` ./swagger/doc``` folder
 
-4 - Edit docker-compose.yaml file
+4 - Create ```docker-compose.yaml``` file with the content below
 
 ```sh
 version: '3.6'
