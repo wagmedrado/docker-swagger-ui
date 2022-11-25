@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    restart: always
+    container_name: swagger_ui_container
+    ports:
+      - "8084:8080"
+    volumes:
+      - ./doc:/usr/share/nginx/html/doc
+    environment:
+      URLS_PRIMARY_NAME: "PetstoreApi-1.1.0"
+      URLS: "[
+        { url: 'doc/petstore1.yaml', name: 'PetstoreApi-1.0.11'},
+        { url: 'doc/petstore2.yaml', name: 'PetstoreApi-1.1.0'},
+      ]"
